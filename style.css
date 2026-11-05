@@ -1,19 +1,114 @@
-/* Style général de la page */
+/* Réglages généraux */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #2b2b2b;
-    color: #e8e8e8;
+    background-color: #16181b;
+    color: #f2f2f2;
     font-family: Arial, sans-serif;
+
+    /* Permet de placer le titre et les boutons */
+    display: flex;
+    flex-direction: column;
 }
-/* En-tête et titre */
+
+/* Le titre */
 header {
     text-align: center;
-    padding-top: 40px;
+    margin-top: 12vh;
 }
 
 h1 {
-    font-size: 3rem;
-    letter-spacing: 4px;
+    display: inline-block;
     margin: 0;
+    padding: 18px 55px;
+
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: 6px;
+    font-style: italic;
+
+    border: 2px solid #777;
+    border-radius: 50px;
+
+    background: linear-gradient(135deg, #24272c, #111214);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Zone contenant les trois boutons */
+nav {
+    margin-top: auto;
+    padding: 0 10vw 8vh;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Style général des boutons */
+.mode {
+    width: 280px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    color: #f2f2f2;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    background: linear-gradient(145deg, #363a40, #1b1d21);
+    border: 2px solid #555;
+    border-radius: 25px;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* L'icône est plus grande */
+.icon {
+    font-size: 2.5rem;
+}
+
+/* Couleur spécifique à chaque bouton */
+.shoot {
+    border-bottom: 4px solid #e63946;
+}
+
+.compare {
+    border-bottom: 4px solid #4c8dff;
+}
+
+.quiz {
+    border-bottom: 4px solid #a855f7;
+}
+
+/* Animation au passage de la souris */
+.mode:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Adaptation pour les téléphones */
+@media (max-width: 800px) {
+    header {
+        margin-top: 8vh;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30px;
+        margin-top: 60px;
+    }
+
+    .mode {
+        width: min(85vw, 350px);
+    }
 }
