@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Basket Lab - Quiz</title>
+
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">← ACCUEIL</a>
+        <h1>🏀 BASKET QUIZ</h1>
+        <p>Teste tes connaissances sur le basketball !</p>
+    </header>
+
+    <main class="quiz-container">
+
+        <div id="quiz-box">
+
+            <div class="quiz-info">
+                <span id="question-number">Question 1</span>
+                <span id="score">Score : 0</span>
+            </div>
+
+            <h2 id="question">
+                Chargement de la question...
+            </h2>
+
+            <div id="answers"></div>
+
+            <p id="result-message"></p>
+
+            <button id="next-button">
+                QUESTION SUIVANTE →
+            </button>
+
+        </div>
+
+        <div id="final-result" class="hidden">
+            <h2>🏆 QUIZ TERMINÉ !</h2>
+
+            <p id="final-score"></p>
+
+            <button id="restart-button">
+                🔄 RECOMMENCER
+            </button>
+        </div>
+
+    </main>
+
+    <script src="quiz.js"></script>
+
+</body>
+</html>
