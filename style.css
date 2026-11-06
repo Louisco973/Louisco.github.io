@@ -151,126 +151,412 @@ nav {
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5);
 }
 /* =========================
-   PAGE COMPARE
+   PAGE COMPARE - NOUVEAU DESIGN
 ========================= */
 
-.compare-header {
-    text-align: center;
-    padding: 30px;
+.compare-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px 80px;
 }
 
-.compare-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
+/* ---------- CONTRÔLES ---------- */
 
-.compare-header p {
-    font-size: 1.1rem;
-}
-
-/* Zone où l'on choisit les tailles */
 .compare-controls {
     display: flex;
-    justify-content: center;
     align-items: end;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 30px auto;
+    justify-content: center;
+    gap: 35px;
+
+    padding: 25px 35px;
+    margin-bottom: 50px;
+
+    background: rgba(15, 20, 28, 0.9);
+    border: 1px solid #ff7a00;
+    border-radius: 25px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
 }
 
 .control {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .control label {
+    font-size: 18px;
     font-weight: bold;
+    color: white;
 }
 
-.control input,
-.control select {
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-/* Bouton comparer */
-#compare-button {
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Zone des silhouettes */
-.height-comparison {
+.height-input {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 70px;
-    min-height: 450px;
-    padding: 40px 20px;
-}
+    align-items: center;
 
-/* Chaque élément */
-.comparison-item {
-    text-align: center;
     width: 180px;
+
+    background: #1d2530;
+    border: 2px solid #ff7a00;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-/* Silhouette d'une personne */
+.height-input input {
+    width: 110px;
+    padding: 14px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.height-input span {
+    padding: 14px;
+    color: #ff7a00;
+    font-weight: bold;
+}
+
+.control select {
+    width: 280px;
+    padding: 15px;
+
+    border: 2px solid #596575;
+    border-radius: 12px;
+
+    background: #1d2530;
+    color: white;
+
+    font-size: 16px;
+}
+
+/* Bouton */
+
+#compare-button {
+    padding: 15px 35px;
+
+    border: 2px solid #ff7a00;
+    border-radius: 14px;
+
+    background: #ff7a00;
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#compare-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
+}
+
+/* ---------- COMPARAISON ---------- */
+
+.height-comparison {
+    min-height: 550px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    gap: 100px;
+
+    padding: 40px;
+
+    position: relative;
+
+    border-bottom: 3px solid #ff7a00;
+
+    background:
+        radial-gradient(circle at center bottom,
+        rgba(255, 122, 0, 0.12),
+        transparent 50%);
+}
+
+.comparison-item {
+    width: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    position: relative;
+}
+
+.height-label {
+    position: absolute;
+    top: -35px;
+
+    padding: 7px 15px;
+
+    background: #151b23;
+    border: 2px solid #ff7a00;
+    border-radius: 20px;
+
+    color: #ff7a00;
+    font-weight: bold;
+}
+
+/* ---------- SILHOUETTES ---------- */
+
 .person {
-    width: 70px;
-    height: 180px;
-    margin: 0 auto;
-    border-radius: 35px 35px 10px 10px;
-    background: white;
-    transition: height 0.5s ease;
+    position: relative;
+    width: 100px;
+
+    background: linear-gradient(180deg, #303947, #11161d);
+    border: 2px solid white;
+
+    border-radius: 45px 45px 15px 15px;
+
+    transition: height 0.6s ease;
 }
 
-/* Panier de basket */
+/* Taille par défaut */
+
+.user-person {
+    height: 270px;
+}
+
+.player-person {
+    height: 340px;
+}
+
+/* Tête */
+
+.person .head {
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    border: 2px solid white;
+    border-radius: 50%;
+
+    background: #1b222c;
+
+    top: -55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+/* Corps */
+
+.person .body {
+    position: absolute;
+
+    width: 65%;
+    height: 40%;
+
+    left: 50%;
+    top: 5%;
+
+    transform: translateX(-50%);
+
+    background: #1b222c;
+}
+
+/* Bras */
+
+.person .arms::before,
+.person .arms::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 45%;
+
+    top: 10%;
+
+    background: #1b222c;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+.person .arms::before {
+    left: -25px;
+}
+
+.person .arms::after {
+    right: -25px;
+}
+
+/* Jambes */
+
+.person .legs::before,
+.person .legs::after {
+    content: "";
+
+    position: absolute;
+
+    width: 32px;
+    height: 45%;
+
+    bottom: 0;
+
+    background: #1b222c;
+    border: 2px solid white;
+    border-radius: 10px 10px 5px 5px;
+}
+
+.person .legs::before {
+    left: 12px;
+}
+
+.person .legs::after {
+    right: 12px;
+}
+
+/* ---------- NOMS ---------- */
+
+.name-box,
+.basket-name {
+    margin-top: 25px;
+    padding: 10px 20px;
+
+    min-width: 160px;
+
+    text-align: center;
+
+    background: #151b23;
+
+    border: 2px solid #ff7a00;
+    border-radius: 25px;
+
+    color: white;
+    font-weight: bold;
+}
+
+.comparison-item p {
+    margin-top: 8px;
+
+    color: #ff7a00;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ---------- PANIER ---------- */
+
+.basket-item {
+    height: 450px;
+}
+
 .basket-hoop {
     position: relative;
+
     width: 180px;
-    height: 320px;
-    margin: 0 auto;
+    height: 400px;
 }
 
 .backboard {
     position: absolute;
-    width: 100px;
-    height: 70px;
-    border: 4px solid white;
-    right: 0;
+
     top: 0;
+    left: 20px;
+
+    width: 140px;
+    height: 85px;
+
+    border: 5px solid white;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.backboard-square {
+    position: absolute;
+
+    width: 50px;
+    height: 35px;
+
+    left: 50%;
+    bottom: 15px;
+
+    transform: translateX(-50%);
+
+    border: 3px solid white;
 }
 
 .rim {
     position: absolute;
-    width: 55px;
-    height: 10px;
-    border: 3px solid white;
+
+    top: 90px;
+    left: 50%;
+
+    width: 75px;
+    height: 16px;
+
+    transform: translateX(-50%);
+
+    border: 4px solid #ff7a00;
     border-radius: 50%;
-    right: 22px;
-    top: 75px;
 }
 
 .net {
     position: absolute;
-    width: 40px;
-    height: 55px;
-    border: 2px solid white;
-    border-radius: 0 0 50% 50%;
-    right: 29px;
-    top: 88px;
+
+    top: 110px;
+    left: 50%;
+
+    width: 50px;
+    height: 70px;
+
+    transform: translateX(-50%);
+
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 25% 100%);
 }
 
 .pole {
     position: absolute;
-    width: 8px;
-    height: 220px;
-    background: white;
-    right: 45px;
+
     top: 100px;
+    left: 50%;
+
+    width: 12px;
+    height: 300px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(90deg, #151b23, #596575, #151b23);
+
+    z-index: -1;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 850px) {
+
+    .compare-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .control select,
+    .height-input {
+        width: 100%;
+    }
+
+    .height-comparison {
+        gap: 25px;
+        padding: 20px 5px;
+        overflow-x: auto;
+    }
+
+    .comparison-item {
+        min-width: 150px;
+    }
 }

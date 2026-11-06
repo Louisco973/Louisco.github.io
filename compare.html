@@ -21,72 +21,100 @@
 
     <main class="compare-page">
 
-        <!-- Zone des choix -->
-        <section class="compare-controls">
+    <!-- Zone des contrôles -->
+    <section class="compare-controls">
 
-            <!-- L'utilisateur entre sa taille -->
-            <div class="control">
-                <label for="user-height">TA TAILLE</label>
-                <input type="number" id="user-height" placeholder="Ex : 180" min="50" max="300">
+        <div class="control">
+            <label for="user-height">👤 TA TAILLE</label>
+
+            <div class="height-input">
+                <input type="number" id="user-height" value="180" min="50" max="300">
                 <span>cm</span>
             </div>
+        </div>
 
-            <!-- L'utilisateur choisit un joueur -->
-            <div class="control">
-                <label for="player-select">CHOISIS UN JOUEUR</label>
+        <div class="control">
+            <label for="player-select">🏀 CHOISIS UN JOUEUR</label>
 
-                <select id="player-select">
-                    <option value="">-- Choisir un joueur --</option>
+            <select id="player-select">
+                <option value="wembanyama">Victor Wembanyama — 224 cm</option>
+                <option value="shaq">Shaquille O'Neal — 216 cm</option>
+                <option value="lebron">LeBron James — 206 cm</option>
+                <option value="curry">Stephen Curry — 188 cm</option>
+                <option value="bogues">Muggsy Bogues — 160 cm</option>
+                <option value="bol">Manute Bol — 231 cm</option>
+            </select>
+        </div>
 
-                    <option value="wembanyama">Victor Wembanyama</option>
-                    <option value="shaq">Shaquille O'Neal</option>
-                    <option value="lebron">LeBron James</option>
-                    <option value="curry">Stephen Curry</option>
-                    <option value="bogues">Muggsy Bogues</option>
-                    <option value="bol">Manute Bol</option>
-                </select>
+        <button id="compare-button">
+            ↔ COMPARER
+        </button>
+
+    </section>
+
+
+    <!-- Zone de comparaison -->
+    <section class="height-comparison">
+
+        <!-- Toi -->
+        <div class="comparison-item">
+
+            <div class="height-label user-label">180 cm</div>
+
+            <div class="person user-person">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="arms"></div>
+                <div class="legs"></div>
             </div>
 
-            <button id="compare-button">COMPARER</button>
+            <div class="name-box">TOI</div>
+            <p id="user-height-result">180 cm</p>
 
-        </section>
+        </div>
 
-        <!-- Zone de comparaison visuelle -->
-        <section class="height-comparison">
 
-            <!-- Toi -->
-            <div class="comparison-item">
-                <div class="person user-person"></div>
+        <!-- Panier -->
+        <div class="comparison-item basket-item">
 
-                <h2 id="user-name">TOI</h2>
-                <p id="user-height-result">-- cm</p>
-            </div>
+            <div class="basket-hoop">
 
-            <!-- Panier NBA -->
-            <div class="comparison-item basket-item">
-
-                <div class="basket-hoop">
-                    <div class="backboard"></div>
-                    <div class="rim"></div>
-                    <div class="net"></div>
-                    <div class="pole"></div>
+                <div class="backboard">
+                    <div class="backboard-square"></div>
                 </div>
 
-                <h2>PANIER NBA</h2>
-                <p>305 cm</p>
+                <div class="rim"></div>
+                <div class="net"></div>
+                <div class="pole"></div>
+
             </div>
 
-            <!-- Joueur sélectionné -->
-            <div class="comparison-item">
-                <div class="person player-person"></div>
+            <div class="basket-name">PANIER NBA</div>
+            <p>305 cm</p>
 
-                <h2 id="player-name">JOUEUR</h2>
-                <p id="player-height-result">-- cm</p>
+        </div>
+
+
+        <!-- Joueur -->
+        <div class="comparison-item">
+
+            <div class="height-label player-label">224 cm</div>
+
+            <div class="person player-person">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="arms"></div>
+                <div class="legs"></div>
             </div>
 
-        </section>
+            <div class="name-box" id="player-name">VICTOR WEMBANYAMA</div>
+            <p id="player-height-result">224 cm</p>
 
-    </main>
+        </div>
+
+    </section>
+
+</main>
 
     <script src="script.js"></script>
 
