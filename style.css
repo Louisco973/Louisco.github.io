@@ -260,51 +260,56 @@ nav {
 }
 
 /* ---------- COMPARAISON ---------- */
-
+/* Zone de comparaison */
 .height-comparison {
-    min-height: 550px;
-
     display: flex;
-    align-items: flex-end;
     justify-content: center;
-
-    gap: 100px;
-
-    padding: 40px;
-
+    align-items: flex-end;
+    gap: 80px;
+    min-height: 600px;
+    padding: 80px 40px 40px;
     position: relative;
-
-    border-bottom: 3px solid #ff7a00;
-
-    background:
-        radial-gradient(circle at center bottom,
-        rgba(255, 122, 0, 0.12),
-        transparent 50%);
 }
 
+/* Chaque élément */
 .comparison-item {
     width: 220px;
-
+    min-height: 520px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-
     position: relative;
 }
 
-.height-label {
-    position: absolute;
-    top: -35px;
+/* Zone réservée à la silhouette */
+.person-container {
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
 
-    padding: 7px 15px;
+/* Les silhouettes */
+.person {
+    width: 130px;
+    transition: height 0.8s ease;
+}
 
-    background: #151b23;
-    border: 2px solid #ff7a00;
-    border-radius: 20px;
+/* Informations sous la silhouette */
+.comparison-item h2 {
+    margin-top: 20px;
+    text-align: center;
+}
 
-    color: #ff7a00;
-    font-weight: bold;
+.comparison-item p {
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* Pour éviter que les grands joueurs touchent les contrôles */
+.height-comparison {
+    margin-top: 40px;
 }
 
 /* ---------- SILHOUETTES ---------- */
