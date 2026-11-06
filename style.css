@@ -281,146 +281,82 @@ nav {
     justify-content: flex-end;
     position: relative;
 }
-
-/* Zone réservée à la silhouette */
-.person-container {
-    height: 500px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-/* Les silhouettes */
-.person {
-    width: 130px;
-    transition: height 0.8s ease;
-}
-
-/* Informations sous la silhouette */
-.comparison-item h2 {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.comparison-item p {
-    margin-top: 8px;
-    text-align: center;
-}
-
-/* Pour éviter que les grands joueurs touchent les contrôles */
-.height-comparison {
-    margin-top: 40px;
-}
-
-/* ---------- SILHOUETTES ---------- */
+/* =========================
+   SILHOUETTES HUMAINES
+   ========================= */
 
 .person {
     position: relative;
-    width: 100px;
-
-    background: linear-gradient(180deg, #303947, #11161d);
-    border: 2px solid white;
-
-    border-radius: 45px 45px 15px 15px;
-
+    width: 120px;
+    background: none;
+    border: none;
     transition: height 0.6s ease;
 }
 
-/* Taille par défaut */
-
-.user-person {
-    height: 270px;
-}
-
-.player-person {
-    height: 340px;
-}
-
 /* Tête */
-
 .person .head {
     position: absolute;
-
-    width: 45px;
-    height: 45px;
-
-    border: 2px solid white;
-    border-radius: 50%;
-
-    background: #1b222c;
-
-    top: -55px;
+    top: 0;
     left: 50%;
-
+    width: 28%;
+    aspect-ratio: 1 / 1;
     transform: translateX(-50%);
+    background: #303947;
+    border: 3px solid white;
+    border-radius: 50%;
 }
 
 /* Corps */
-
 .person .body {
     position: absolute;
-
-    width: 65%;
-    height: 40%;
-
+    top: 17%;
     left: 50%;
-    top: 5%;
-
+    width: 38%;
+    height: 38%;
     transform: translateX(-50%);
-
-    background: #1b222c;
+    background: linear-gradient(180deg, #303947, #1d2633);
+    border: 3px solid white;
+    border-radius: 20px 20px 10px 10px;
 }
 
 /* Bras */
-
-.person .arms::before,
-.person .arms::after {
-    content: "";
-
+.person .arm {
     position: absolute;
-
-    width: 18px;
-    height: 45%;
-
-    top: 10%;
-
-    background: #1b222c;
-    border: 2px solid white;
-    border-radius: 15px;
+    top: 20%;
+    width: 13%;
+    height: 38%;
+    background: #303947;
+    border: 3px solid white;
+    border-radius: 20px;
 }
 
-.person .arms::before {
-    left: -25px;
+.person .left-arm {
+    left: 12%;
+    transform: rotate(8deg);
 }
 
-.person .arms::after {
-    right: -25px;
+.person .right-arm {
+    right: 12%;
+    transform: rotate(-8deg);
 }
 
 /* Jambes */
-
-.person .legs::before,
-.person .legs::after {
-    content: "";
-
+.person .leg {
     position: absolute;
-
-    width: 32px;
-    height: 45%;
-
-    bottom: 0;
-
-    background: #1b222c;
-    border: 2px solid white;
-    border-radius: 10px 10px 5px 5px;
+    top: 54%;
+    width: 15%;
+    height: 43%;
+    background: #303947;
+    border: 3px solid white;
+    border-radius: 20px;
 }
 
-.person .legs::before {
-    left: 12px;
+.person .left-leg {
+    left: 35%;
 }
 
-.person .legs::after {
-    right: 12px;
+.person .right-leg {
+    right: 35%;
 }
 
 /* ---------- NOMS ---------- */
