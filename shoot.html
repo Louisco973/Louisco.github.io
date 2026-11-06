@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Basket Lab - Shoot</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">🏠 ACCUEIL</a>
+    </header>
+
+    <main class="shoot-page">
+
+        <!-- Titre -->
+        <section class="shoot-header">
+            <h1>🏀 SHOOT LAB</h1>
+            <p>Teste ton adresse et marque le plus de paniers possible !</p>
+        </section>
+
+        <!-- Score -->
+        <section class="game-info">
+
+            <div class="score-box">
+                <span>SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="score-box">
+                <span>TIRS</span>
+                <strong id="shots">0</strong>
+            </div>
+
+        </section>
+
+        <!-- Zone de jeu -->
+        <section class="game-area">
+
+            <!-- Panier -->
+            <div class="basket">
+
+                <div class="backboard"></div>
+
+                <div class="rim"></div>
+
+                <div class="net"></div>
+
+            </div>
+
+            <!-- Ballon -->
+            <div id="ball" class="ball">🏀</div>
+
+            <!-- Zone de tir -->
+            <div class="player-area">
+
+                <div class="player">
+                    🏀
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Contrôles -->
+        <section class="shoot-controls">
+
+            <p class="instruction">
+                Clique sur le bouton pour tirer !
+            </p>
+
+            <button id="shoot-button">
+                🏀 TIRER !
+            </button>
+
+        </section>
+
+        <!-- Message du résultat -->
+        <p id="message"></p>
+
+    </main>
+
+    <script src="shoot.js"></script>
+
+</body>
+
+</html>
