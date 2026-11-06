@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Basket Lab - Compare</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- En-tête de la page -->
+    <header class="compare-header">
+        <a href="index.html" class="back-button">← ACCUEIL</a>
+        <h1>COMPARE</h1>
+        <p>Compare ta taille avec des légendes de la NBA.</p>
+    </header>
+
+    <main class="compare-page">
+
+        <!-- Zone des choix -->
+        <section class="compare-controls">
+
+            <!-- L'utilisateur entre sa taille -->
+            <div class="control">
+                <label for="user-height">TA TAILLE</label>
+                <input type="number" id="user-height" placeholder="Ex : 180" min="50" max="300">
+                <span>cm</span>
+            </div>
+
+            <!-- L'utilisateur choisit un joueur -->
+            <div class="control">
+                <label for="player-select">CHOISIS UN JOUEUR</label>
+
+                <select id="player-select">
+                    <option value="">-- Choisir un joueur --</option>
+
+                    <option value="wembanyama">Victor Wembanyama</option>
+                    <option value="shaq">Shaquille O'Neal</option>
+                    <option value="lebron">LeBron James</option>
+                    <option value="curry">Stephen Curry</option>
+                    <option value="bogues">Muggsy Bogues</option>
+                    <option value="bol">Manute Bol</option>
+                </select>
+            </div>
+
+            <button id="compare-button">COMPARER</button>
+
+        </section>
+
+        <!-- Zone de comparaison visuelle -->
+        <section class="height-comparison">
+
+            <!-- Toi -->
+            <div class="comparison-item">
+                <div class="person user-person"></div>
+
+                <h2 id="user-name">TOI</h2>
+                <p id="user-height-result">-- cm</p>
+            </div>
+
+            <!-- Panier NBA -->
+            <div class="comparison-item basket-item">
+
+                <div class="basket-hoop">
+                    <div class="backboard"></div>
+                    <div class="rim"></div>
+                    <div class="net"></div>
+                    <div class="pole"></div>
+                </div>
+
+                <h2>PANIER NBA</h2>
+                <p>305 cm</p>
+            </div>
+
+            <!-- Joueur sélectionné -->
+            <div class="comparison-item">
+                <div class="person player-person"></div>
+
+                <h2 id="player-name">JOUEUR</h2>
+                <p id="player-height-result">-- cm</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
