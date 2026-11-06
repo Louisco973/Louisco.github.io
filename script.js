@@ -1,35 +1,85 @@
-// Les joueurs et leur taille en centimètres
+// Informations sur les joueurs
 const players = {
-    "Victor Wembanyama": 224,
-    "LeBron James": 206,
-    "Stephen Curry": 188,
-    "Kevin Durant": 211,
-    "Giannis Antetokounmpo": 211
+    wembanyama: {
+        name: "Victor Wembanyama",
+        height: 224
+    },
+    shaq: {
+        name: "Shaquille O'Neal",
+        height: 216
+    },
+    lebron: {
+        name: "LeBron James",
+        height: 206
+    },
+    curry: {
+        name: "Stephen Curry",
+        height: 188
+    },
+    bogues: {
+        name: "Muggsy Bogues",
+        height: 160
+    },
+    bol: {
+        name: "Manute Bol",
+        height: 231
+    }
 };
 
-// On récupère les éléments du HTML
-const heightInput = document.getElementById("user-height");
+// Récupération des éléments HTML
+const userHeightInput = document.getElementById("user-height");
 const playerSelect = document.getElementById("player-select");
 const compareButton = document.getElementById("compare-button");
 
+const userName = document.getElementById("user-name");
 const userHeightResult = document.getElementById("user-height-result");
-const playerHeightResult = document.getElementById("player-height-result");
+
 const playerName = document.getElementById("player-name");
+const playerHeightResult = document.getElementById("player-height-result");
 
-// Quand on clique sur le bouton
-compareButton.addEventListener("click", function () {
+const userPerson = document.querySelector(".user-person");
+const playerPerson = document.querySelector(".player-person");
 
-    // On récupère la taille entrée par l'utilisateur
-    const userHeight = Number(heightInput.value);
 
-    // On récupère le joueur sélectionné
-    const selectedPlayer = playerSelect.value;
+// Fonction pour comparer
+function compareHeights() {
 
-    // On récupère sa taille dans notre liste
-    const selectedPlayerHeight = players[selectedPlayer];
+    // Récupère la taille de l'utilisateur
+    const userHeight = Number(userHeightInput.value);
 
-    // On affiche les résultats
+    // Récupère le joueur sélectionné
+    const selectedPlayer = players[playerSelect.value];
+
+    // Vérification
+    if (!userHeight || !selectedPlayer) {
+        alert("Veuillez entrer une taille et choisir un joueur.");
+        return;
+    }
+
+    // Affichage des noms et tailles
+    userName.textContent = "TOI";
     userHeightResult.textContent = userHeight + " cm";
-    playerHeightResult.textContent = selectedPlayerHeight + " cm";
-    playerName.textContent = selectedPlayer;
-});
+
+    playerName.textContent = selectedPlayer.name;
+    playerHeightResult.textContent = selectedPlayer.height + " cm";
+
+
+    // Calcul de la taille visuelle
+    // 231 cm = environ 500 pixels maximum
+    const scale = 2;
+
+    const userVisualHeight = userHeight * scale;
+    const playerVisualHeight = selectedPlayer.height * scale;
+
+    // Changement de la taille des bonhommes
+    userPerson.style.height = userVisualHeight + "px";
+    playerPerson.style.height = playerVisualHeight + "px";
+}
+
+
+// Lorsque l'on clique sur COMPARER
+compareButton.addEventListener("click", compareHeights);
+
+
+// Lance une première comparaison au chargement de la page
+compareHeights();
